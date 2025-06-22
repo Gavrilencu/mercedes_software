@@ -65,6 +65,9 @@ class AdvancedOBD2Diagnostic:
         self.live_data = []
         self.current_session_id = None
         
+        # Initialize status indicators
+        self.status_indicators = {}
+        
         # Initialize GUI
         self.setup_gui()
         
@@ -248,18 +251,22 @@ class AdvancedOBD2Diagnostic:
         # Connection status
         if self.connection_manager.is_connected:
             self.sidebar_status.configure(text="✅ Conectat", text_color="green")
-            self.status_indicators["disconnected"].configure(text="Conectat", text_color="green")
+            if "disconnected" in self.status_indicators:
+                self.status_indicators["disconnected"].configure(text="Conectat", text_color="green")
         else:
             self.sidebar_status.configure(text="❌ Deconectat", text_color="red")
-            self.status_indicators["disconnected"].configure(text="Deconectat", text_color="red")
+            if "disconnected" in self.status_indicators:
+                self.status_indicators["disconnected"].configure(text="Deconectat", text_color="red")
         
         # Session status
         if self.current_session_id:
             self.session_info.configure(text=f"✅ Sesiune #{self.current_session_id}", text_color="green")
-            self.status_indicators["no_session"].configure(text="Activă", text_color="green")
+            if "no_session" in self.status_indicators:
+                self.status_indicators["no_session"].configure(text="Activă", text_color="green")
         else:
             self.session_info.configure(text="❌ Fără sesiune", text_color="red")
-            self.status_indicators["no_session"].configure(text="Inactivă", text_color="red")
+            if "no_session" in self.status_indicators:
+                self.status_indicators["no_session"].configure(text="Inactivă", text_color="red")
         
     def start_background_tasks(self):
         """Start background monitoring tasks"""
