@@ -1,0 +1,55 @@
+{
+    "connection": {
+        "default_baudrate": 38400,
+        "timeout": 1,
+        "retry_attempts": 3,
+        "auto_connect": false
+    },
+    "sensors": {
+        "update_interval": 1000,
+        "live_monitoring_interval": 500,
+        "max_data_points": 120
+    },
+    "display": {
+        "theme": "dark",
+        "language": "ro",
+        "window_size": {
+            "width": 1400,
+            "height": 900
+        },
+        "min_window_size": {
+            "width": 1200,
+            "height": 800
+        }
+    },
+    "logging": {
+        "enabled": true,
+        "level": "INFO",
+        "file": "obd2_diagnostic.log"
+    },
+    "export": {
+        "default_format": "csv",
+        "auto_save": false,
+        "save_directory": "./exports"
+    },
+    "supported_pids": {
+        "0100": "Test comunicare",
+        "010C": "RPM motor",
+        "010D": "Viteză vehicul",
+        "0105": "Temperatură motor",
+        "010A": "Presiune combustibil",
+        "0111": "Poziție accelerator",
+        "012F": "Nivel combustibil",
+        "0142": "Tensiune baterie",
+        "010E": "Timp avans",
+        "010B": "Presiune intake",
+        "0112": "Poziție marșarier",
+        "010F": "Temperatură aer intake",
+        "013C": "Temperatură catalizator",
+        "015E": "Consum combustibil"
+    },
+    "error_codes": {
+        "database_file": "error_codes.json",
+        "auto_translate": true
+    }
+} 
