@@ -1,185 +1,213 @@
-# OBD2 Diagnostic Tool - Mercedes Software
+# 🚗 OBD2 Diagnostic Tool - Mercedes Software
 
-O aplicație completă de diagnosticare OBD2 pentru Windows, creată în Python, care permite citirea și ștergerea codurilor de eroare, monitorizarea senzorilor în timp real și accesarea informațiilor despre vehicul.
+O aplicație modernă și user-friendly pentru diagnosticarea vehiculelor prin interfața OBD2, special concepută pentru utilizarea cu adaptoare USB CH34X.
 
-## Caracteristici
-
-### 🔧 Funcționalități Principale
-- **Conectare OBD2**: Suport pentru adaptoare OBD2 USB CH34X
-- **Citire Coduri Eroare**: Detectarea și afișarea codurilor de eroare DTC
-- **Ștergere Coduri Eroare**: Ștergerea codurilor de eroare din ECU
-- **Monitorizare Senzori**: Citirea datelor de la toți senzorii mașinii
-- **Monitorizare Live**: Grafice în timp real pentru RPM și viteză
-- **Informații Vehicul**: Citirea VIN și informațiilor despre ECU
-- **Export Date**: Salvare date în format CSV
-
-### 📊 Senzori Suportați
-- **Motor**: RPM, temperatură motor, presiune combustibil, timp avans
-- **Transmisie**: Viteză, poziție marșarier
-- **Combustibil**: Nivel combustibil, consum, presiune
-- **Electric**: Tensiune baterie
-- **Sisteme**: Poziție accelerator, presiune EGR, temperatură catalizator
-- **Și multe altele...**
+## ✨ Caracteristici Principale
 
 ### 🎨 Interfață Modernă
-- Design dark mode modern
-- Interfață intuitivă cu tab-uri organizate
-- Grafice interactive pentru monitorizare
-- Tabel cu coduri de eroare sortabile
+- **Design Dark Mode** - Interfață elegantă cu tema întunecată
+- **Iconițe Intuitive** - Navigare simplă cu iconițe descriptive
+- **Layout Responsive** - Se adaptează la diferite dimensiuni de ecran
+- **Animații Smooth** - Tranziții fluide între secțiuni
 
-## Instalare
+### 🔌 Conectare Inteligentă
+- **Scanare Automată** - Detectează automat dispozitivele OBD2
+- **Test Comunicare** - Verifică conectivitatea înainte de conectare
+- **Status Real-time** - Afișează statusul conexiunii în timp real
+- **Progress Bar** - Indică progresul scanării porturilor
+
+### 📊 Dashboard Modern
+- **Informații Vehicul** - VIN, calibrare, detalii ECU
+- **Acțiuni Rapide** - Butoane pentru funcții frecvente
+- **Status Cards** - Afișare clară a stării sistemului
+
+### 📈 Monitorizare Avansată
+- **Grafice Live** - Monitorizare în timp real cu matplotlib
+- **Senzori Multipli** - Peste 18 senzori diferiți
+- **Export Date** - Salvare în format CSV
+- **Animații Smooth** - Grafice cu tranziții fluide
+
+### ⚠️ Gestionare Coduri Eroare
+- **Bază de Date Completă** - Peste 1000+ coduri de eroare în română
+- **Descrieri Detaliate** - Explicații clare pentru fiecare cod
+- **Export CSV** - Salvare coduri pentru analiză
+- **Ștergere Sigură** - Confirmare înainte de ștergere
+
+### ⚙️ Funcții Avansate
+- **Informații ECU** - Detalii despre unitatea de control
+- **Test Comunicare** - Verificare protocol OBD2
+- **Reset Adaptiv** - Resetarea valorilor adaptive
+
+## 🚀 Instalare și Utilizare
 
 ### Cerințe Sistem
 - Windows 10/11
-- Python 3.8 sau mai nou
-- Adaptor OBD2 USB CH34X
+- Python 3.8+
+- Adaptor USB CH34X pentru OBD2
+- Vehicul cu interfață OBD2
 
-### Pași Instalare
-
-1. **Clonează repository-ul**:
+### Instalare Dependențe
 ```bash
-git clone <repository-url>
-cd mercedes_software
-```
+# Instalare automată cu script
+install.bat
 
-2. **Instalează dependențele**:
-```bash
+# Sau manual
 pip install -r requirements.txt
 ```
 
-3. **Conectează adaptorul OBD2**:
-   - Conectează adaptorul OBD2 la portul USB
-   - Conectează celălalt capăt la portul OBD2 al mașinii
-   - Pornește contactul mașinii (nu motorul)
+### Pornire Aplicație
 
-4. **Rulează aplicația**:
+#### Interfață Modernă (Recomandată)
 ```bash
-python obd2_diagnostic.py
+run_modern.bat
 ```
 
-## Utilizare
+#### Interfață Clasică
+```bash
+run.bat
+```
+
+## 🎯 Ghid de Utilizare
 
 ### 1. Conectare
-- Selectează portul COM corect din listă
-- Apasă butonul "Conectare"
-- Verifică că statusul arată "Conectat" (verde)
+1. Conectați adaptorul USB CH34X la computer
+2. Conectați adaptorul la portul OBD2 al vehiculului
+3. Porniți aplicația
+4. Apăsați "🔍 Scanare Porturi" pentru a detecta dispozitivul
+5. Selectați portul cu "✅ OBD2" și apăsați "🔗 Conectare"
 
 ### 2. Dashboard
-- **Informații Vehicul**: Afișează VIN și calibrarea ECU
-- **Acțiuni Rapide**: Butoane pentru operațiuni comune
+- **Informații Vehicul** - Afișează VIN și detalii ECU
+- **Acțiuni Rapide** - Acces rapid la funcții frecvente
+- **Status Sistem** - Monitorizare starea conexiunii
 
 ### 3. Senzori
-- Afișează toate senzorii disponibili
-- Valorile se actualizează automat
-- Apasă "Test Senzori" pentru a citi toate datele
+- **Monitorizare Live** - Date în timp real de la senzori
+- **Grafice Interactive** - Vizualizare grafică a datelor
+- **Export Date** - Salvare pentru analiză ulterioară
 
 ### 4. Coduri Eroare
-- **Citire Coduri**: Detectează toate codurile de eroare
-- **Ștergere Coduri**: Șterge codurile de eroare din ECU
-- **Export CSV**: Salvează codurile în fișier CSV
+- **Citire Coduri** - Detectează toate codurile active
+- **Descrieri Detaliate** - Explicații în română
+- **Ștergere Sigură** - Eliminare coduri cu confirmare
 
 ### 5. Monitorizare Live
-- **Start Monitorizare**: Începe monitorizarea în timp real
-- **Grafice**: Afișează RPM și viteză în timp real
-- **Salvare Date**: Salvează datele în fișier CSV
+- **Grafice Real-time** - RPM, viteză, temperatură
+- **Salvare Date** - Export în format CSV
+- **Control Play/Pause** - Start/stop monitorizare
 
-### 6. Avansat
-- **Informații ECU**: Citește informații detaliate despre ECU
-- **Test Comunicare**: Testează comunicarea OBD2
-- **Reset Adaptiv**: Resetează valorile adaptive
+### 6. Funcții Avansate
+- **Informații ECU** - Detalii tehnice despre unitatea de control
+- **Test Comunicare** - Verificare protocol OBD2
+- **Reset Adaptiv** - Resetarea valorilor de calibrare
 
-## Structura Proiectului
+## 🔧 Configurare
+
+### Fișiere de Configurare
+- `config.json` - Setări generale aplicație
+- `modern_theme.json` - Configurare temă modernă
+- `error_codes.json` - Bază de date coduri eroare
+
+### Personalizare Tema
+Editați `modern_theme.json` pentru a personaliza:
+- Culori principale
+- Iconițe
+- Dimensiuni UI
+- Stiluri componente
+
+## 📁 Structura Proiectului
 
 ```
 mercedes_software/
-├── obd2_diagnostic.py      # Aplicația principală
-├── connection_manager.py    # Manager pentru conexiunea OBD2
-├── gui_components.py       # Componente GUI
-├── requirements.txt        # Dependențe Python
-└── README.md              # Acest fișier
+├── modern_obd2_app.py      # Aplicația principală modernă
+├── modern_gui.py           # Componente GUI moderne
+├── connection_manager.py   # Manager conexiuni OBD2
+├── obd2_diagnostic.py     # Funcții diagnostic
+├── gui_components.py      # Componente GUI clasice
+├── config.json            # Configurare aplicație
+├── modern_theme.json      # Configurare temă modernă
+├── error_codes.json       # Bază de date coduri eroare
+├── requirements.txt       # Dependențe Python
+├── install.bat           # Script instalare
+├── run.bat              # Script rulare clasic
+├── run_modern.bat       # Script rulare modern
+└── README.md            # Documentație
 ```
 
-## Protocol OBD2 Suportat
+## 🎨 Caracteristici Design Modern
 
-Aplicația suportă următoarele comenzi OBD2:
+### Tema Dark Mode
+- Fundal întunecat pentru confort vizual
+- Contrast optim pentru citire
+- Culori moderne și elegante
 
-### Mode 01 - Date Curente
-- `0100` - Test comunicare
-- `010C` - RPM motor
-- `010D` - Viteză vehicul
-- `0105` - Temperatură motor
-- `010A` - Presiune combustibil
-- `0111` - Poziție accelerator
-- `012F` - Nivel combustibil
-- `0142` - Tensiune baterie
+### Navigare Intuitivă
+- Sidebar cu iconițe descriptive
+- Tranziții smooth între secțiuni
+- Butoane cu feedback vizual
 
-### Mode 03 - Coduri Eroare
-- `03` - Citire coduri eroare curente
-- `07` - Citire coduri eroare în așteptare
+### Componente Interactive
+- Cards moderne cu colțuri rotunjite
+- Progress bars animate
+- Butoane cu hover effects
+- Grafice interactive
 
-### Mode 04 - Ștergere Coduri
-- `04` - Ștergere coduri eroare
+### Responsive Design
+- Se adaptează la diferite rezoluții
+- Layout flexibil
+- Scalare automată componente
 
-### Mode 09 - Informații Vehicul
-- `0902` - VIN
-- `0904` - ID Calibrare
-- `090A` - Nume ECU
-
-## Depanare
+## 🔍 Depanare
 
 ### Probleme Comune
 
-1. **Nu se poate conecta**:
-   - Verifică că adaptorul OBD2 este conectat corect
-   - Verifică că contactul mașinii este pornit
-   - Încearcă un port COM diferit
+#### Nu se detectează dispozitivul OBD2
+1. Verificați că adaptorul este conectat corect
+2. Asigurați-vă că vehiculul este pornit
+3. Testați cu alt software OBD2
+4. Verificați driverele USB
 
-2. **Nu se citesc datele**:
-   - Verifică că motorul este pornit (pentru unele senzori)
-   - Verifică că mașina suportă protocolul OBD2
-   - Încearcă să resetezi conexiunea
+#### Eroare de comunicare
+1. Verificați că vehiculul suportă protocolul OBD2
+2. Asigurați-vă că motorul este pornit
+3. Testați cu alt adaptor OBD2
+4. Verificați setările portului COM
 
-3. **Erori de comunicare**:
-   - Verifică cablurile OBD2
-   - Verifică că adaptorul este compatibil
-   - Încearcă să reinstalezi driverele USB
+#### Aplicația nu pornește
+1. Verificați că Python este instalat
+2. Rulați `pip install -r requirements.txt`
+3. Verificați că toate fișierele sunt prezente
+4. Rulați cu drepturi de administrator
 
-### Log-uri și Debug
+## 📞 Suport
 
-Pentru a activa log-urile de debug, editează `connection_manager.py` și adaugă:
-```python
-import logging
-logging.basicConfig(level=logging.DEBUG)
-```
+Pentru suport tehnic sau întrebări:
+- Verificați secțiunea de depanare
+- Consultați documentația OBD2
+- Testați cu vehicule diferite
 
-## Contribuții
+## 📄 Licență
 
-Contribuțiile sunt binevenite! Pentru a contribui:
+Acest proiect este dezvoltat pentru utilizare educațională și personală.
 
-1. Fork repository-ul
-2. Creează un branch pentru feature-ul tău
-3. Fă commit-urile
-4. Creează un Pull Request
+## 🔄 Actualizări
 
-## Licență
+### Versiunea 2.0 - Interfață Modernă
+- ✅ Design complet nou cu tema dark
+- ✅ Navigare sidebar cu iconițe
+- ✅ Componente moderne și responsive
+- ✅ Grafice interactive cu matplotlib
+- ✅ Scanare inteligentă dispozitive OBD2
+- ✅ Export date îmbunătățit
+- ✅ Configurare temă personalizabilă
 
-Acest proiect este licențiat sub MIT License.
-
-## Suport
-
-Pentru suport și întrebări:
-- Creează un issue pe GitHub
-- Contactează dezvoltatorul
-
-## Changelog
-
-### v1.0.0
-- Versiunea inițială
-- Suport complet pentru OBD2
-- Interfață grafică modernă
-- Monitorizare în timp real
-- Export date CSV
+### Versiunea 1.0 - Interfață Clasică
+- ✅ Funcționalitate de bază OBD2
+- ✅ Citire senzori și coduri eroare
+- ✅ Interfață tkinter clasică
+- ✅ Bază de date coduri eroare
 
 ---
 
-**Notă**: Această aplicație este destinată doar pentru diagnosticarea propriilor vehicule. Folosiți-o cu responsabilitate și respectați legislația locală. 
+**🚗 OBD2 Diagnostic Tool - Mercedes Software**  
+*Interfață modernă pentru diagnosticarea vehiculelor* 
