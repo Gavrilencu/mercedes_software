@@ -43,6 +43,23 @@ class Notification:
         self.duration = duration
         self.timestamp = datetime.now()
         self.id = f"{self.timestamp.strftime('%Y%m%d_%H%M%S')}_{hash(self.message)}"
+    
+    def __lt__(self, other):
+        """Comparare pentru sortarea în coada de priorități"""
+        if not isinstance(other, Notification):
+            return False
+        # Prioritate mai mare = prioritate mai mică în coadă (invers)
+        return self.priority > other.priority
+    
+    def __eq__(self, other):
+        """Egalitate pentru notificări"""
+        if not isinstance(other, Notification):
+            return False
+        return self.id == other.id
+    
+    def __hash__(self):
+        """Hash pentru notificare"""
+        return hash(self.id)
 
 class NotificationManager:
     """Manager pentru sistemul de notificări"""
